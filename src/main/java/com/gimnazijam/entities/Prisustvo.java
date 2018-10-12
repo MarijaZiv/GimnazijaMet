@@ -79,4 +79,9 @@ public class Prisustvo {
 		this.ucenik = ucenik;
 	}
 
+	@Override
+	public String toString() {
+		return "Prisustvo [id=" + id + ", opravdano=" + opravdano + ", cas=" + cas + ", ucenik=" + ucenik + "]";
+	}
+
 }
