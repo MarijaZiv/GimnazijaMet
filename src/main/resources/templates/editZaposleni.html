@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Edit zaposleni</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{../css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+	<br /> 
+		<h1 style="background-color: #b3e6ff; padding: 9px;">Edit zaposleni</h1>	
+		<div class="col-md-6">
+			<form th:object="${zaposleni}" th:action="@{../save}" action="#" method="post">
+				<input type="hidden" th:field="*{id}" class="form-control" /> 
+				<input type="text" th:field="*{banka}" class="form-control"
+					placeholder="Banka" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="text" th:field="*{brojRacuna}" class="form-control"
+					placeholder="Broj racuna" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="text" th:field="*{pozicija}" class="form-control"
+					placeholder="Pozicija" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="text" th:field="*{sss}" class="form-control"
+					placeholder="SSS" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="text" th:field="*{zvanje}" class="form-control"
+					placeholder="Zvanje" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="submit" class="btn btn-primary" value="Save"></input>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

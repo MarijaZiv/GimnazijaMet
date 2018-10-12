@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Zaposleni List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<br />
+		<div class="col-md-12">
+			<h1 style="background-color: #b3e6ff; padding: 9px;">Zaposleni</h1>
+		</div>
+		<div style="padding: 0 20px">
+			<table class="table table-striped">
+				<tr>
+					<th>Zaposleni ID</th>
+					<th>Banka</th>
+					<th>Broj racuna</th>
+					<th>Pozicija</th>
+					<th>SSS</th>
+					<th>Zvanje</th>
+				</tr>
+				<tr th:each="zaposleni : ${zaposleni}">
+					<td th:text="${zaposleni.id}"></td>
+					<td th:text="${zaposleni.banka}"></td>
+					<td th:text="${zaposleni.brojRacuna}"></td>
+					<td th:text="${zaposleni.pozicija}"></td>
+					<td th:text="${zaposleni.sss}"></td>
+					<td th:text="${zaposleni.zvanje}"></td>
+
+					<td><a th:href="@{/edit/{id}(id=${zaposleni_id})}"
+						class="btn btn-primary btn-xs">Edit</a> <a
+						th:href="@{/delete/{id}(id=${zaposleni_id})}"
+						class="btn btn-danger btn-xs">Delete</a></td>
+				</tr>
+			</table>
+		 	<a th:href="@{/addZaposleni}" class="btn btn-primary">Add Zaposleni</a> 
+		<!--	<a href="/addZaposleni" class="btn btn-primary">Add Zaposleni</a> -->
+		</div>
+	</div>
+</body>
+</html>
