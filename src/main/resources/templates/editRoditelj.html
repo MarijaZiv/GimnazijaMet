@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Edit roditelj</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{../css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container">
+		<br />
+		<h1 style="background-color: #b3e6ff; padding: 9px;">Edit
+			roditelj</h1>
+		<div class="col-md-6">
+			<form th:object="${roditelj}" th:action="@{../save}" action="#"
+				method="post">
+				<input type="hidden" th:field="*{id}" class="form-control" /> <input
+					type="text" th:field="*{id}" class="form-control"
+					placeholder="User Id" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="submit" class="btn btn-primary" value="Save"></input>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

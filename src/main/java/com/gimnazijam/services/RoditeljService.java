@@ -8,10 +8,10 @@ public interface RoditeljService {
 
 	public List<Roditelj> getAllRoditelj();
 
-	public Roditelj getRoditeljById(int Id);
+	public Roditelj getRoditeljById(int id);
 
 	public void saveOrUpdate(Roditelj roditelj);
 
-	public void deleteRoditelj(int Id);
+	public void deleteRoditelj(int id);
 
 }

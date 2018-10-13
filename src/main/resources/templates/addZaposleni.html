@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <title>Add zaposleni</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,7 +10,8 @@
 <body>
 	<div class="container">
 		<br />
-		<h1 style="background-color: #b3e6ff; padding: 9px;">New zaposleni</h1>
+		<h1 style="background-color: #b3e6ff; padding: 9px;">New
+			zaposleni</h1>
 		<div class="col-md-6">
 			<form th:object="${zaposleni}" th:action="@{save}" action="#"
 				method="post">
@@ -27,6 +29,9 @@
 				<div style="clear: both; display: block; height: 10px;"></div>
 				<input type="text" th:field="*{zvanje}" class="form-control"
 					placeholder="Zvanje" />
+				<div style="clear: both; display: block; height: 10px;"></div>
+				<input type="text" th:field="*{id}" class="form-control"
+					placeholder="User Id" />
 				<div style="clear: both; display: block; height: 10px;"></div>
 				<input type="submit" class="btn btn-primary" value="Save"></input>
 			</form>

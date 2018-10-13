@@ -32,10 +32,10 @@ public class ZaposleniController {
 		return "zaposleni";
 	}
 
-	@RequestMapping(value = "/addZaposleni", method = RequestMethod.GET)
-	public ModelAndView addZaposleni() {
-		ModelAndView model = new ModelAndView("addZaposleni");
-		return model;
+	@RequestMapping(value = "addZaposleni")
+	public String addZaposleni(Model model) {
+		model.addAttribute("zaposleni", new Zaposleni());
+		return "addZaposleni";
 	}
 
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ public class ZaposleniController {
 		return "redirect:/zaposleni";
 	}
 
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)	/*GET*/
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteZaposleni(@PathVariable("id") int zaposleni_id, Model model) {
 		zaposleniRepository.deleteById(zaposleni_id);
 		return "redirect:/zaposleni";

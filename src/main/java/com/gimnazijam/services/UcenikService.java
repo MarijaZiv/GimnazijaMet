@@ -8,10 +8,10 @@ public interface UcenikService {
 
 	public List<Ucenik> getAllUcenik();
 
-	public Ucenik getUcenikById(int Id);
+	public Ucenik getUcenikById(int id);
 
 	public void saveOrUpdate(Ucenik ucenik);
 
-	public void deleteUcenik(int Id);
+	public void deleteUcenik(int id);
 
 }

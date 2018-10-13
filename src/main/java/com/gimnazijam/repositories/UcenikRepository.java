@@ -8,4 +8,6 @@ import com.gimnazijam.entities.Ucenik;
 @Repository
 public interface UcenikRepository extends JpaRepository<Ucenik, Integer> {
 
+	void save(int ucenik_id);
+
 }

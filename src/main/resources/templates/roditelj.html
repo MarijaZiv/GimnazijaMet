@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Roditelj List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<br />
+		<div class="col-md-12">
+			<h1 style="background-color: #b3e6ff; padding: 9px;">Roditelji</h1>
+		</div>
+		<div style="padding: 0 20px">
+			<table class="table table-striped">
+				<tr>
+					<th>Roditelj ID</th>
+				</tr>
+				<tr th:each="roditelj : ${roditelj}">
+					<td th:text="${roditelj.id}"></td>
+					<td><a th:href="@{/edit/{id}(id=${roditelj_id})}"
+						class="btn btn-primary btn-xs">Edit</a> 
+						<a th:href="@{/delete/{id}(id=${roditelj_id})}"
+						class="btn btn-danger btn-xs">Delete</a></td>
+				</tr>
+			</table>
+			<a href="/addRoditelj" class="btn btn-primary">Add Roditelj</a>
+		</div>
+	</div>
+</body>
+</html>

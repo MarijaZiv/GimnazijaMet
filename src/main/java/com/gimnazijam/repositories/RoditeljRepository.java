@@ -8,4 +8,6 @@ import com.gimnazijam.entities.Roditelj;
 @Repository
 public interface RoditeljRepository extends JpaRepository<Roditelj, Integer> {
 
+	void save(int roditelj_id);
+
 }

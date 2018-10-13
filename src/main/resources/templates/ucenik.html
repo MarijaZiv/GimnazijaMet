@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Ucenik List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet"
+	th:href="@{css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<br />
+		<div class="col-md-12">
+			<h1 style="background-color: #b3e6ff; padding: 9px;">Ucenici</h1>
+		</div>
+		<div style="padding: 0 20px">
+			<table class="table table-striped">
+				<tr>
+					<th>Ucenik ID</th>
+					<th>Broj knjizice</th>
+					<th>Ime roditelja</th>
+					<th>Osnovna skola</th>
+				</tr>
+				<tr th:each="ucenik : ${ucenik}">
+					<td th:text="${ucenik.id}"></td>
+					<td th:text="${ucenik.brojKnjizice}"></td>
+					<td th:text="${ucenik.imeRoditelja}"></td>
+					<td th:text="${ucenik.osnovnaSkola}"></td>
+
+					<td><a th:href="@{/edit/{id}(id=${ucenik_id})}"
+						class="btn btn-primary btn-xs">Edit</a> 
+						<a th:href="@{/delete/{id}(id=${ucenik_id})}"
+						class="btn btn-danger btn-xs">Delete</a></td>
+				</tr>
+			</table>
+			<a href="/addUcenik" class="btn btn-primary">Add Ucenik</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -13,4 +13,5 @@ public interface ZaposleniRepository extends JpaRepository<Zaposleni, Integer> {
 	List<Zaposleni> findById(int zaposleni_id);
 
 	void save(int zaposleni_id);
+
 }

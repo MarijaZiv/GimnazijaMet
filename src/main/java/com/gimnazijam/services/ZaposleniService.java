@@ -8,10 +8,10 @@ public interface ZaposleniService {
 
 	public List<Zaposleni> getAllZaposleni();
 
-	public Zaposleni getZaposleniById(int Id);
+	public Zaposleni getZaposleniById(int id);
 
 	public void saveOrUpdate(Zaposleni zaposleni);
 
-	public void deleteZaposleni(int Id);
+	public void deleteZaposleni(int id);
 
 }
